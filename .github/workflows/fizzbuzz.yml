@@ -1,0 +1,17 @@
+name: FizzBuzz
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  fizzbuzz:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: fwal/setup-swift@da0e3e04b5e3e15dbc3861bd835ad9f0afe56296
+        with:
+          swift-version: "5.7.2"
+      - name: do fizzbuzz
+        run: swift fizzbuzz.swift
